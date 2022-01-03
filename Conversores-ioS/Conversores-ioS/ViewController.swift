@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         }
         
         func calcTemperature() {
-            guard let temperature = Double(tfValue.text! else {return} )
+            guard let temperature = Double(tfValue.text! ) else  {return}
         }
         
         func calcWeight() {

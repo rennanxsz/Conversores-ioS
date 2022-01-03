@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01D-pT-W5p">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01D-pT-W5p">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="443"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperatura" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJ0-VC-ZgH">
                                         <rect key="frame" x="124" y="52" width="175" height="40"/>
@@ -73,15 +74,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.14509803921568626" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-bh-4G3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-bh-4G3">
                                 <rect key="frame" x="83" y="500" width="248" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.20110720200000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.23996457460000001" green="0.2077333331" blue="0.7419964671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub0-Ss-e1e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub0-Ss-e1e">
                                 <rect key="frame" x="178" y="695" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                 <color key="textColor" red="0.29786676169999998" green="0.2614124417" blue="0.90139085050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -89,22 +92,13 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Qmf-bh-4G3" firstAttribute="top" secondItem="01D-pT-W5p" secondAttribute="bottom" constant="70" id="9Dc-64-krf"/>
-                            <constraint firstItem="ub0-Ss-e1e" firstAttribute="top" secondItem="Qmf-bh-4G3" secondAttribute="bottom" constant="71" id="M3k-oP-Mht"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ub0-Ss-e1e" secondAttribute="trailing" constant="178" id="MOL-eD-t9g"/>
-                            <constraint firstItem="ub0-Ss-e1e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="178" id="ZbW-MI-vRD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ub0-Ss-e1e" secondAttribute="bottom" constant="137" id="ecu-Wm-vf4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qmf-bh-4G3" secondAttribute="trailing" constant="83" id="ieL-GS-BcU"/>
-                            <constraint firstItem="Qmf-bh-4G3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="lMh-uZ-fLf"/>
-                            <constraint firstItem="ub0-Ss-e1e" firstAttribute="top" secondItem="Qmf-bh-4G3" secondAttribute="bottom" constant="44" id="og4-zE-Csw"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btUnit1" destination="XGI-Dq-Oi6" id="wlM-5x-C9Y"/>
                         <outlet property="btUnit2" destination="1jf-12-iie" id="laL-eu-dtv"/>
                         <outlet property="lbResult" destination="Qmf-bh-4G3" id="VGm-U5-gvx"/>
                         <outlet property="lbResultUnit" destination="ub0-Ss-e1e" id="9o9-sU-2aJ"/>
+                        <outlet property="lbUnit" destination="tJ0-VC-ZgH" id="3sy-3c-bFp"/>
                         <outlet property="tfValue" destination="ghb-qw-NEI" id="UU3-0g-yXk"/>
                     </connections>
                 </viewController>

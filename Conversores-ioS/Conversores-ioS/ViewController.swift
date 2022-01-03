@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         case "Moeda":
             lbUnit.text = "Distancia"
             btUnit1.setTitle("Metro", for: .normal)
-            btUnit2.setTitle("Milhas", for: .normal)
+            btUnit2.setTitle("Quilometros", for: .normal)
         default:
             lbUnit.text = "Temperatura"
             btUnit1.setTitle("Kilograma", for: .normal)
@@ -67,26 +67,59 @@ class ViewController: UIViewController {
             calcCurrency()
         default:
             calcDistance()
-            
+        }
+        
+        view.endEditing(true)
+        let result = Double(lbResult.text!)!
+        lbResult.text = String(format: "%.2f", result )
         }
         
         func calcTemperature() {
-            guard let temperature = Double(tfValue.text! ) else  {return}
+            guard let temperature = Double(tfValue.text!) else  {return}
+            if btUnit1.alpha == 1.0 {
+                lbResultUnit.text = "Farenheint"
+                lbResult.text = String(temperature * 1.8 + 32.0)
+            }else{
+                lbResultUnit.text = "Celsius"
+                lbResult.text = String((temperature - 32.0) / 1.8)
+            }
+        
         }
         
         func calcWeight() {
-            
+            guard let weight = Double(tfValue.text!) else {return}
+            if btUnit1.alpha == 1.0 {
+                lbResultUnit.text = "Libras"
+                lbResult.text = String (weight / 2.2046)
+            }else{
+                lbResultUnit.text = "Kilogramas"
+                lbResult.text = String (weight * 2.2046)
+            }
         }
         
         func calcCurrency() {
+            guard let currency = Double(tfValue.text!) else {return}
+            if btUnit1.alpha == 1.0{
+                lbResultUnit.text = "Dollar"
+                lbResult.text = String(currency / 5.60)
+            }else {
+                lbResultUnit.text = "Real"
+                lbResult.text = String(currency * 5.60)
+                
+            }
             
         }
         
         func calcDistance() {
+            guard let distance = Double(tfValue.text!) else {return}
+            if btUnit1.alpha == 1.0 {
+                lbResultUnit.text = "Kilometros"
+                lbResult.text = String(distance / 1000.0)
+            }else{
+                lbResultUnit.text = "Metros"
+                lbResult.text = String(distance * 1000.0)
+            }
             
         }
     
     }
-    
-    
-}
